@@ -1,5 +1,7 @@
-from django.core.validators import MinLengthValidator, RegexValidator
+from django.core.validators import MinLengthValidator, RegexValidator, MinValueValidator, MaxValueValidator
 from django.db import models
+from datetime import date, timedelta
+
 
 # Create your models here.
 
@@ -21,4 +23,13 @@ class Event(models.Model):
                                 MinLengthValidator(6, message='The town name must be at least 6 charracers long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
+
+    date = models.DateField(
+        null=False,
+        blank=False,
+        validators=[
+            MinValueValidator(limit_value=date.today),
+            MaxValueValidator(limit_value=date.today() + timedelta(days=365))
+        ]
+    )
 
