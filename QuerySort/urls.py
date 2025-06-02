@@ -4,9 +4,5 @@ from QuerySort import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('add/', include([
-        path('lector/', views.lector, name='add-lector'),
-        path('data/', views.add_data, name='add-data'),
-    ]
-    ))
+    path('new-data', views.new_data, name='inject-data'),
 ]
