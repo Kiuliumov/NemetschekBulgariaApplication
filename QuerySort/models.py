@@ -5,9 +5,17 @@ from datetime import date, timedelta
 
 # Create your models here.
 
+class Lector(models.Model):
+    name = models.CharField(max_length=255,
+                            null=False,
+                            blank=False,
+                            validators=[
+                                MinLengthValidator(6, message='The lector name must be at least 6 charracers long.'),
+                                RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
+                            ])
+
 class Event(models.Model):
     # The RegEx  '^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$' allows Latin and Cyrillic letters, digits, spaces, special characters and more
-
     name = models.CharField(max_length=255,
                             null=False,
                             blank=False,
@@ -33,3 +41,14 @@ class Event(models.Model):
         ]
     )
 
+    type = models.CharField(max_length=255,
+                            null=False,
+                            blank=False,
+                            validators=[
+                                MinLengthValidator(6, message='The event type must be at least 6 charracers long.'),
+                                RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
+                            ])
+
+    lectors = models.ForeignKey(Lector,
+                                on_delete=models.SET_NULL,
+                                null=True)
