@@ -1,5 +1,4 @@
 from django.urls import path, include
-
 from QuerySort import views
 
 urlpatterns = [
