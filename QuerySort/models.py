@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator, RegexValidator, MinValueValidator, MaxValueValidator
 from django.db import models
 from datetime import date, timedelta
@@ -5,12 +6,20 @@ from datetime import date, timedelta
 
 # Create your models here.
 
+def validate_event_date(value):
+    today = date.today()
+    max_date = today + timedelta(days=365)
+    if value < today:
+        raise ValidationError('Date cannot be in the past.')
+    if value > max_date:
+        raise ValidationError('Date cannot be more than one year from today.')
+
 class Lector(models.Model):
     name = models.CharField(max_length=255,
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The lector name must be at least 6 charracers long.'),
+                                MinLengthValidator(6, message='The lector name must be at least 6 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
 
@@ -20,7 +29,7 @@ class Event(models.Model):
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The event name must be at least 6 charracers long.'),
+                                MinLengthValidator(6, message='The event name must be at least 6 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
 
@@ -28,7 +37,7 @@ class Event(models.Model):
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The town name must be at least 6 charracers long.'),
+                                MinLengthValidator(6, message='The town name must be at least 6 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
 
@@ -45,7 +54,7 @@ class Event(models.Model):
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The event type must be at least 6 charracers long.'),
+                                MinLengthValidator(6, message='The event type must be at least 6 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
 
