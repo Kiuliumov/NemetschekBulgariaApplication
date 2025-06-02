@@ -45,8 +45,7 @@ class Event(models.Model):
         null=False,
         blank=False,
         validators=[
-            MinValueValidator(limit_value=date.today),
-            MaxValueValidator(limit_value=date.today() + timedelta(days=365))
+           validate_event_date
         ]
     )
 
