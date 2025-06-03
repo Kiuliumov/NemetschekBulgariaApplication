@@ -13,9 +13,11 @@ body {
     align-items: center;
     animation: fadeIn 1.2s ease-out;
     font-size: 100%;
-    color: #3B4A76; /* a darker blue for text */
 }
 
+.flex-container{
+    display: flex;
+}
 form {
     background: #faedd4;
     padding: 1.5em 2em;

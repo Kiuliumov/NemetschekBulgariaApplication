@@ -8,24 +8,27 @@
 </head>
 <body>
     <form method="post">
-    <h1 style="font-family: Georgia, serif;">Ново събитие</h1>
-        {% csrf_token %}
-
-        {% for field in form %}
-            <p>
-                {{ field.label_tag }}
-                {{ field }}
-                {% if field.help_text %}
-                    <span class="helptext">{{ field.help_text }}</span>
-                {% endif %}
-                {% if field.errors %}
-                    <ul class="errorlist">
-                        {% for error in field.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </p>
+        <div class="flex-container">
+            <h1 style="font-family: Georgia, serif;">Ново събитие</h1>
+            {% csrf_token %}
+    
+            {% for field in form %}
+                <p>
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                        <span class="helptext">{{ field.help_text }}</span>
+                    {% endif %}
+                    {% if field.errors %}
+                        <ul class="errorlist">
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </p>
+                <img src="{% static 'images/event.avif' %}">
+        </div>
         {% endfor %}
 
         <button type="submit">Submit</button>
