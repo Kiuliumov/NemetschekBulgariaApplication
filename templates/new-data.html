@@ -3,12 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Event Form</title>
+    <title>Добави събитие</title>
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 </head>
 <body>
     <form method="post">
-        <div class="flex-container">
             <h1 style="font-family: Georgia, serif;">Ново събитие</h1>
             {% csrf_token %}
     
@@ -27,11 +26,11 @@
                         </ul>
                     {% endif %}
                 </p>
-                <img src="{% static 'images/event.avif' %}">
-        </div>
         {% endfor %}
+    
 
         <button type="submit">Submit</button>
-    </form>
+        </form>
+
 </body>
 </html>
