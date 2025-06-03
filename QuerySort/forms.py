@@ -34,13 +34,11 @@ class EventForm(forms.ModelForm):
             'type': 'Тип на събитието',
         }
 
-        def clean_lectors(self):
-            data = self.cleaned_data.get('lectors')
-            if not data or data.strip() == '':
-                return 'Няма лектори.'
-            return data
-
-from django import forms
+    def clean_lectors(self):
+        data = self.cleaned_data.get('lectors')
+        if not data or data.strip() == '':
+            return 'Няма лектори.'
+        return data
 
 class EventFilterOrderForm(forms.Form):
     ORDER_CHOICES = [
