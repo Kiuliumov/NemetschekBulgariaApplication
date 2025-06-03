@@ -13,8 +13,9 @@
         <h1>Събития</h1>
         <a href="/new-data" class="new-event-btn">Ново събитие</a>
     </header>
-
-    <form method="get" class="filter-form">
+    
+    <section>
+        <form method="get" class="filter-form">
         <div class="field">
             <label for="{{ form.order_by.id_for_label }}">{{ form.order_by.label }}</label>
             {{ form.order_by }}
@@ -42,6 +43,8 @@
     
         <button type="submit">Филтрирай</button>
     </form>
+    </section>
+    
 
     <main>
         <section class="event-list">
