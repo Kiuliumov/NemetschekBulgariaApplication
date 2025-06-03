@@ -49,14 +49,10 @@ class Event(models.Model):
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
 
-
-class Lector(models.Model):
-    name = models.CharField(max_length=255,
+    lectors = models.CharField(max_length=255,
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The lector name must be at least 6 characters long.'),
+                                MinLengthValidator(6, message='The event lectors must be at least 6 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
-
-    events = models.ManyToManyField(Event, related_name='lectors')
