@@ -1,6 +1,8 @@
 import os
 import django
 import json
+import sys
+
 from datetime import datetime
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoProject5.settings")
@@ -30,7 +32,6 @@ def create_events_from_json(file_path):
                 print(f"There was an error! " + str(e))
 
 if __name__ == "__main__":
-    import sys
     if len(sys.argv) != 2:
         print("Usage: python caller.py file.json")
         print("Make sure the json looks like this {name: name, town: town, date: date}")
