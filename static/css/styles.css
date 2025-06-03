@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   color: #f0f0f0;
-  line-height: 1.4; /* already whole-ish */
+  line-height: 1.4;
 }
 
 a {
@@ -28,11 +28,38 @@ header {
   text-align: center;
 }
 
+.new-event-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #f0f0f0;
+  border-radius: 1rem;
+  padding: 0.6rem 1.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 5px 8px rgba(102, 126, 234, 0.6);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin: 5em;
+}
+
+.new-event-btn:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(118, 75, 162, 0.8);
+}
+
+.new-event-btn:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
 .filter-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2rem; /* simplified horizontal gap */
-  padding: 1rem 2rem;
+  gap: 1rem 2rem;
+    padding: 1rem 2rem;
   background-color: #3a445a;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   justify-content: center;
@@ -44,7 +71,7 @@ header {
   flex: 0 0 auto;
   min-width: 80px;
   font-weight: 600;
-  font-size: 1rem; /* rounded from 0.95rem */
+  font-size: 1rem;
   align-self: center;
 }
 
@@ -53,12 +80,12 @@ header {
 .filter-form input[type="date"] {
   flex: 1 1 150px;
   max-width: 180px;
-  padding: 0.4rem 0.6rem; /* rounded 0.35 -> 0.4 */
-  border-radius: 1rem; /* rounded from 0.6rem */
-  border: 2px solid #5a6478; /* from 1.5px to 2px */
+  padding: 0.4rem 0.6rem;
+  border-radius: 1rem;
+  border: 2px solid #5a6478;
   background-color: #283040;
   color: #e0e0e0;
-  font-size: 1rem; /* rounded from 0.9rem */
+  font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -73,7 +100,7 @@ header {
 
 .filter-form button {
   flex: 0 0 auto;
-  padding: 0.5rem 2rem; /* rounded from 1.8rem */
+  padding: 0.5rem 2rem;
   background: linear-gradient(135deg, #667eea, #764ba2);
   border: none;
   border-radius: 1rem;
@@ -111,7 +138,7 @@ main {
 
 .event-card {
   background-color: #2d3349;
-  border-radius: 1rem; /* rounded from 1.2rem */
+  border-radius: 1rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
   padding: 1rem 1rem 2.5rem 1rem;
   color: #dcdcdc;
@@ -199,31 +226,4 @@ footer {
 
 .pagination a:hover {
   background-color: #4b4f68;
-}
-
-.new-event-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #f0f0f0;
-  border-radius: 1rem;
-  padding: 0.6rem 1.6rem;
-  font-weight: 700;
-  font-size: 1rem;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  box-shadow: 0 5px 8px rgba(102, 126, 234, 0.6);
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin: 0 auto 1rem;
-}
-
-.new-event-btn:hover {
-  background: linear-gradient(135deg, #764ba2, #667eea);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px rgba(118, 75, 162, 0.8);
-}
-
-.new-event-btn:active {
-  transform: scale(0.95);
-  box-shadow: none;
 }
