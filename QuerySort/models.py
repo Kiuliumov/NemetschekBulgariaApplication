@@ -21,7 +21,7 @@ class Event(models.Model):
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The event name must be at least 6 characters long.'),
+                                MinLengthValidator(1, message='The event name must be at least 1 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
 
@@ -29,7 +29,7 @@ class Event(models.Model):
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The town name must be at least 6 characters long.'),
+                                MinLengthValidator(1, message='The town name must be at least 1 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
                             ])
 
@@ -45,14 +45,10 @@ class Event(models.Model):
                             null=False,
                             blank=False,
                             validators=[
-                                MinLengthValidator(6, message='The event type must be at least 6 characters long.'),
+                                MinLengthValidator(5, message='The event type must be at least 5 characters long.'),
                                 RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
-                            ])
+                            ],
+                            choices=(('Конференция', 'Конференция'), ('Уъркшоп', 'Уъркшоп') , ('Семинар', 'Семинар'), ('Други', 'Други')))
 
     lectors = models.CharField(max_length=255,
-                            null=False,
-                            blank=False,
-                            validators=[
-                                MinLengthValidator(6, message='The event lectors must be at least 6 characters long.'),
-                                RegexValidator('^[A-Za-zА-Яа-яЁё0-9 _\-\'&]+$')
-                            ])
+                               default='Няма лектори.')
