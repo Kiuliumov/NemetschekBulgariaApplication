@@ -41,7 +41,7 @@ header {
   border: none;
   box-shadow: 0 5px 8px rgba(102, 126, 234, 0.6);
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin: 5em;
+  margin: 1em;
 }
 
 .new-event-btn:hover {
@@ -58,18 +58,24 @@ header {
 .filter-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2rem;
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
   background-color: #3a445a;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: #d8d8d8;
 }
 
+
+.filter-form .field {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex: 1 1 300px;
+}
+
 .filter-form label {
   flex: 0 0 auto;
-  min-width: 80px;
   font-weight: 600;
   font-size: 1rem;
   align-self: center;
