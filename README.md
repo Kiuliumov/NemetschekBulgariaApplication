@@ -57,10 +57,10 @@
 
 ### Screenshots 
 
-[](screenshot.png)
+[](Screenshot 2025-06-03 130528.png)
 
 
-[](screenshot-new-data.png)
+[](Screenshot 2025-06-03 130601.png)
 
 
 За допълнителни въпроси и директна връзка:
