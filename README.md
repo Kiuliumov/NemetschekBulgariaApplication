@@ -60,7 +60,7 @@
 [](screenshot.png)
 
 
-[](screenshot1.png)
+[](screenshot-new-data.png)
 
 
 За допълнителни въпроси и директна връзка:
