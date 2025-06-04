@@ -51,6 +51,10 @@
 
 ```
 
+Като се запише json-а се зарежда в базата по следния начин:
+
+`python caller.py {пътя към файла}`
+
 ### Screenshots 
 
 [](screenshot.png)
